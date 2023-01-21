@@ -73,6 +73,13 @@ public class UpgradesManager : MonoBehaviour
 
         void CreateUpgrades<T>(List<T> level, int index)
         {
+            foreach (Transform upgrade in UpgradeHandlers[index].UpgradesPanel.transform)
+            {
+                Destroy(upgrade.gameObject);
+            }
+
+            UpgradeHandlers[index].Upgrades.Clear();
+
             for (int i = 0; i < level.Count; i++)
             {
                 Upgrades upgrade = Instantiate(UpgradeHandlers[index].UpgradePrefab, UpgradeHandlers[index].UpgradesPanel);
@@ -100,15 +107,15 @@ public class UpgradesManager : MonoBehaviour
                     switch (index)
                     {
                         case 0:
-                            if (i == 0 || GameController.Instance.data.clickUpgradeLevel[i - 1] > 0)
+                            if (i == 0 || GameController.Instance.data.clickUpgradeLevel[i - 1] > 0 || GameController.Instance.data.clickUpgradeLevel[i] > 0)
                                 UpgradeHandlers[index].Upgrades[i].gameObject.SetActive(GameController.Instance.data.coinsAmount >= unlock[i]);
                             break;
                         case 1:
-                            if (i == 0 || GameController.Instance.data.productionUpgradeLevel[i - 1] > 0)
+                            if (i == 0 || GameController.Instance.data.productionUpgradeLevel[i - 1] > 0 || GameController.Instance.data.productionUpgradeLevel[i] > 0)
                                 UpgradeHandlers[index].Upgrades[i].gameObject.SetActive(GameController.Instance.data.coinsAmount >= unlock[i]);
                             break;
                         case 2:
-                            if (i == 0 || GameController.Instance.data.generatorsUpgradeLevel[i - 1] > 0)
+                            if (i == 0 || GameController.Instance.data.generatorsUpgradeLevel[i - 1] > 0 || GameController.Instance.data.generatorsUpgradeLevel[i] > 0)
                                 UpgradeHandlers[index].Upgrades[i].gameObject.SetActive(GameController.Instance.data.coinsAmount >= unlock[i]);
                             break;
 

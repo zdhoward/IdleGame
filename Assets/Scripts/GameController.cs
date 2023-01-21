@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance;
 
-    const string dataFileName = "GameData";
+    public string dataFileName = "GameData";
     public GameData data;
 
     [SerializeField] TMP_Text coinsLabel;
@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
-        data = SaveSystem.SaveExists(dataFileName) ? SaveSystem.LoadData<GameData>(dataFileName) : new GameData();
+        data = SaveSystem.LoadOrNewGame();
 
         UpgradesManager.Instance.StartUpgradeManager();
         GameSettings.Instance.StartSettings();

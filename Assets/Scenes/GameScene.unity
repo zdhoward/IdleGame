@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClickTab
       objectReference: {fileID: 0}
+    - target: {fileID: 114902089163191894, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
+      propertyPath: m_text
+      value: Click
+      objectReference: {fileID: 0}
     - target: {fileID: 224048302966237324, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -318,6 +322,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4496596785248970809, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
+      propertyPath: m_text
+      value: Click
+      objectReference: {fileID: 0}
     - target: {fileID: 4709102687116408447, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -442,6 +450,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8329915387180618164, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
+      propertyPath: m_text
+      value: Click
+      objectReference: {fileID: 0}
     - target: {fileID: 8971507873288094528, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -461,7 +473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114902089163191894, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_text
-      value: Click
+      value: Generator
       objectReference: {fileID: 0}
     - target: {fileID: 224048302966237324, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_AnchorMax.y
@@ -649,7 +661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4496596785248970809, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_text
-      value: Click
+      value: Generator
       objectReference: {fileID: 0}
     - target: {fileID: 4709102687116408447, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_AnchorMax.x
@@ -777,7 +789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329915387180618164, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_text
-      value: Click
+      value: Generator
       objectReference: {fileID: 0}
     - target: {fileID: 8971507873288094528, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_IsActive
@@ -1888,7 +1900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114902089163191894, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_text
-      value: Click
+      value: Production
       objectReference: {fileID: 0}
     - target: {fileID: 224048302966237324, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2076,7 +2088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4496596785248970809, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_text
-      value: Click
+      value: Production
       objectReference: {fileID: 0}
     - target: {fileID: 4709102687116408447, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2204,7 +2216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329915387180618164, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_text
-      value: Click
+      value: Production
       objectReference: {fileID: 0}
     - target: {fileID: 8971507873288094528, guid: 1be0f75aaff35b84bbf25fde5ebb4cac, type: 3}
       propertyPath: m_IsActive
@@ -2621,6 +2633,10 @@ PrefabInstance:
     - target: {fileID: 1638550329609400, guid: 3dbd4bc71acbb1145b6e80827b858127, type: 3}
       propertyPath: m_Name
       value: PasteClipboardButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638550329609400, guid: 3dbd4bc71acbb1145b6e80827b858127, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114964236328612650, guid: 3dbd4bc71acbb1145b6e80827b858127, type: 3}
       propertyPath: m_text
@@ -5266,6 +5282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuyMaxButton
       objectReference: {fileID: 0}
+    - target: {fileID: 114397371423741450, guid: 64325a7db649f3a42be36398b9d061bd, type: 3}
+      propertyPath: m_text
+      value: Buy Max
+      objectReference: {fileID: 0}
     - target: {fileID: 224158144656824916, guid: 64325a7db649f3a42be36398b9d061bd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5470,6 +5490,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -27.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2661686234078361340, guid: 64325a7db649f3a42be36398b9d061bd, type: 3}
+      propertyPath: m_text
+      value: Buy Max
+      objectReference: {fileID: 0}
     - target: {fileID: 3164001451991802888, guid: 64325a7db649f3a42be36398b9d061bd, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5525,6 +5549,10 @@ PrefabInstance:
     - target: {fileID: 7135184296703155263, guid: 64325a7db649f3a42be36398b9d061bd, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570241589848706929, guid: 64325a7db649f3a42be36398b9d061bd, type: 3}
+      propertyPath: m_text
+      value: Buy Max
       objectReference: {fileID: 0}
     - target: {fileID: 7748310026507627353, guid: 64325a7db649f3a42be36398b9d061bd, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5949,7 +5977,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
@@ -9135,6 +9163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4554a4756837c70428086decbd87c9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataFileName: GameData
   data:
     coinsAmount:
       mantissa: 0
@@ -10270,7 +10299,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
@@ -10603,6 +10632,10 @@ PrefabInstance:
     - target: {fileID: 1638550329609400, guid: 3dbd4bc71acbb1145b6e80827b858127, type: 3}
       propertyPath: m_Name
       value: CopyToClipboardButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638550329609400, guid: 3dbd4bc71acbb1145b6e80827b858127, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114964236328612650, guid: 3dbd4bc71acbb1145b6e80827b858127, type: 3}
       propertyPath: m_text
@@ -13153,9 +13186,9 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1834643167}
-  m_TextViewport: {fileID: 0}
-  m_TextComponent: {fileID: 0}
-  m_Placeholder: {fileID: 0}
+  m_TextViewport: {fileID: 1402952301}
+  m_TextComponent: {fileID: 731973415}
+  m_Placeholder: {fileID: 891488235}
   m_VerticalScrollbar: {fileID: 0}
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
@@ -14420,9 +14453,9 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1948731193}
-  m_TextViewport: {fileID: 0}
-  m_TextComponent: {fileID: 0}
-  m_Placeholder: {fileID: 0}
+  m_TextViewport: {fileID: 1245047843}
+  m_TextComponent: {fileID: 1323418751}
+  m_Placeholder: {fileID: 1674610193}
   m_VerticalScrollbar: {fileID: 0}
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}

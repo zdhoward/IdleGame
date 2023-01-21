@@ -11,6 +11,8 @@ using TMPro;
 
 public class SaveSystem : MonoBehaviour
 {
+    const string WEBGL_SAVE_NAME = "WEBGL_SAVE";
+
     public TMP_InputField ImportField;
     public TMP_InputField ExportField;
     public WebGLNativeInputField ImportFieldWebGL;
@@ -39,6 +41,15 @@ public class SaveSystem : MonoBehaviour
 
     public static void SaveData<T>(T data, string fileName)
     {
+#if UNITY_WEBGL
+        BinaryFormatter formatter = new BinaryFormatter();
+        MemoryStream memoryStream = new MemoryStream();
+        formatter.Serialize(memoryStream, data);
+        string dataToSave = Convert.ToBase64String(memoryStream.ToArray());
+
+        //WebGLFileSaver.SaveFile(dataToSave, fileName);
+        PlayerPrefs.SetString(WEBGL_SAVE_NAME, dataToSave);
+#else
         Directory.CreateDirectory(SavePath);
         Directory.CreateDirectory(BackUpSavePath);
 
@@ -58,9 +69,22 @@ public class SaveSystem : MonoBehaviour
                 writer.Close();
             }
         }
+#endif
     }
 
+#if UNITY_WEBGL
     public static T LoadData<T>(string fileName)
+    {
+        string dataToLoad = PlayerPrefs.GetString(WEBGL_SAVE_NAME);
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        MemoryStream memoryStream = new MemoryStream(Convert.FromBase64String(dataToLoad));
+
+        return (T)formatter.Deserialize(memoryStream);
+
+    }
+#else
+public static T LoadData<T>(string fileName)
     {
         Directory.CreateDirectory(SavePath);
         Directory.CreateDirectory(BackUpSavePath);
@@ -96,25 +120,41 @@ public class SaveSystem : MonoBehaviour
             }
         }
     }
+#endif
+
+    public static GameData LoadOrNewGame()
+    {
+        GameData data;
+#if UNITY_WEBGL
+        data = PlayerPrefs.HasKey(WEBGL_SAVE_NAME) ? SaveSystem.LoadData<GameData>(GameController.Instance.dataFileName) : new GameData();
+#else
+        data = SaveSystem.SaveExists(GameController.Instance.dataFileName) ? SaveSystem.LoadData<GameData>(GameController.Instance.dataFileName) : new GameData();
+#endif
+        return data;
+    }
 
     public static bool SaveExists(string fileName)
     {
+#if UNITY_WEBGL
+        return PlayerPrefs.HasKey(WEBGL_SAVE_NAME);
+#else
         return File.Exists(SavePath + fileName + FileType) || File.Exists(BackUpSavePath + fileName + FileType);
+#endif
     }
 
     public void Import()
     {
+#if UNITY_WEBGL
+        PlayerPrefs.SetString(WEBGL_SAVE_NAME, ImportFieldWebGL.text.Trim());
+#else
         Directory.CreateDirectory(SavePath);
 
         using (StreamWriter writer = new StreamWriter(SavePath + FilePath + FileType))
         {
-#if UNITY_WEBGL
-            writer.WriteLine(ImportFieldWebGL.text);
-#else
             writer.WriteLine(ImportField.text);
-#endif
             writer.Close();
         }
+#endif
 
         GameController.Instance.Start();
     }
@@ -122,18 +162,52 @@ public class SaveSystem : MonoBehaviour
     public void Export()
     {
         GameController.Instance.Save();
+
+#if UNITY_WEBGL
+        ExportFieldWebGL.text = PlayerPrefs.GetString(WEBGL_SAVE_NAME);
+#else
         Directory.CreateDirectory(SavePath);
 
         using (StreamReader reader = new StreamReader(SavePath + FilePath + FileType))
         {
-#if UNITY_WEBGL
-            ExportFieldWebGL.text = reader.ReadToEnd();
-#else
             ExportField.text = reader.ReadToEnd();
-#endif
             reader.Close();
         }
+#endif
     }
+
+    //     public void Import()
+    //     {
+    //         Directory.CreateDirectory(SavePath);
+
+    //         using (StreamWriter writer = new StreamWriter(SavePath + FilePath + FileType))
+    //         {
+    // #if UNITY_WEBGL
+    //             writer.WriteLine(ImportFieldWebGL.text);
+    // #else
+    //             writer.WriteLine(ImportField.text);
+    // #endif
+    //             writer.Close();
+    //         }
+
+    //         GameController.Instance.Start();
+    //     }
+
+    //     public void Export()
+    //     {
+    //         GameController.Instance.Save();
+    //         Directory.CreateDirectory(SavePath);
+
+    //         using (StreamReader reader = new StreamReader(SavePath + FilePath + FileType))
+    //         {
+    // #if UNITY_WEBGL
+    //             ExportFieldWebGL.text = reader.ReadToEnd();
+    // #else
+    //             ExportField.text = reader.ReadToEnd();
+    // #endif
+    //             reader.Close();
+    //         }
+    //     }
 
     public void CopyToClipboard()
     {
