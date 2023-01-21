@@ -44,7 +44,6 @@ public class SaveSystem : MonoBehaviour
         formatter.Serialize(memoryStream, data);
         string dataToSave = Convert.ToBase64String(memoryStream.ToArray());
 
-        //WebGLFileSaver.SaveFile(dataToSave, fileName);
         PlayerPrefs.SetString(WEBGL_SAVE_NAME, dataToSave);
 #else
         Directory.CreateDirectory(SavePath);
@@ -172,39 +171,6 @@ public static T LoadData<T>(string fileName)
         }
 #endif
     }
-
-    //     public void Import()
-    //     {
-    //         Directory.CreateDirectory(SavePath);
-
-    //         using (StreamWriter writer = new StreamWriter(SavePath + FilePath + FileType))
-    //         {
-    // #if UNITY_WEBGL
-    //             writer.WriteLine(ImportFieldWebGL.text);
-    // #else
-    //             writer.WriteLine(ImportField.text);
-    // #endif
-    //             writer.Close();
-    //         }
-
-    //         GameController.Instance.Start();
-    //     }
-
-    //     public void Export()
-    //     {
-    //         GameController.Instance.Save();
-    //         Directory.CreateDirectory(SavePath);
-
-    //         using (StreamReader reader = new StreamReader(SavePath + FilePath + FileType))
-    //         {
-    // #if UNITY_WEBGL
-    //             ExportFieldWebGL.text = reader.ReadToEnd();
-    // #else
-    //             ExportField.text = reader.ReadToEnd();
-    // #endif
-    //             reader.Close();
-    //         }
-    //     }
 
     public void CopyToClipboard()
     {
