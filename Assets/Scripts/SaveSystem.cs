@@ -6,9 +6,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using TMPro;
 
-//using File = UnityEngine.Windows.File;
-
-
 public class SaveSystem : MonoBehaviour
 {
     const string WEBGL_SAVE_NAME = "WEBGL_SAVE";

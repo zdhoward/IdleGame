@@ -106,6 +106,6 @@ public class GameController : MonoBehaviour
     public void ResetGameData()
     {
         data = new GameData();
-        Save();
+        Start();
     }
 }
